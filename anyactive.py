@@ -3,10 +3,24 @@ import os
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-l", "--list", help="Path of the file containing the list of subdomains")
+parser.add_argument("-l", "--list", help="Path of the file containing the list of subdomains/urls")
 parser.add_argument("-u", "--url", help="URL to check")
 parser.add_argument("-dir", "--directory", help="directory path to save the output files")
 args = parser.parse_args()
+
+print(''''\033[1;32m'
+    ╔═══╗         ╔═══╗     ╔╗               
+    ║╔═╗║         ║╔═╗║    ╔╝╚╗              
+    ║║ ║║╔═╗ ╔╗ ╔╗║║ ║║╔══╗╚╗╔╝╔╗╔╗╔╗╔══╗    
+    ║╚═╝║║╔╗╗║║ ║║║╚═╝║║╔═╝ ║║ ╠╣║╚╝║║╔╗║    
+    ║╔═╗║║║║║║╚═╝║║╔═╗║║╚═╗ ║╚╗║║╚╗╔╝║║═╣    
+    ╚╝ ╚╝╚╝╚╝╚═╗╔╝╚╝ ╚╝╚══╝ ╚═╝╚╝ ╚╝ ╚══╝    
+\033[1;34m       v0.1\033[1;32m  ╔═╝║     \033[1;34mBy Lokzy\033[1;32m                       
+             ╚══╝     
+''')
+
+
+
 
 if args.directory:
     if not os.path.exists(args.directory):
