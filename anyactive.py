@@ -13,7 +13,7 @@ parser.add_argument("-u", "--url", help="URL to check")
 parser.add_argument("-dir", "--directory", help="directory path to save the output files")
 args = parser.parse_args()
 
-print(''''\033[1;32m'
+print('''\033[1;32m
     ╔═══╗         ╔═══╗     ╔╗               
     ║╔═╗║         ║╔═╗║    ╔╝╚╗              
     ║║ ║║╔═╗ ╔╗ ╔╗║║ ║║╔══╗╚╗╔╝╔╗╔╗╔╗╔══╗    
