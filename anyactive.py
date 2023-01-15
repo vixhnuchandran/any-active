@@ -1,3 +1,8 @@
+#!/usr/bin/env python3
+# twitter https://twitter.com/callmelokzy
+#linkedin https://www.linkedin.com/in/callmelokzy/
+
+
 import requests
 import os
 import argparse
