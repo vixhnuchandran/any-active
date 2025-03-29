@@ -1,46 +1,66 @@
-# AnyActive : URL Classifier based on HTTPcodes<p>
-Simple python tool to classify bulk amount of urls based on httpcodes.
+## README.md
 
-## <b> Features </b>
-- in single url mode displays response header information 
-- in list mode classifies each item from list and save to a particular file 
-- can specify to which directory files should be saved under
-## <b> Installing </b>
-#### 1. Clone repository:
-```
-$ git clone https://github.com/callmelokzy/anyactive
-$ cd anyactive
-```
-#### 2. Install the dependencies:
-```
-$ pip3 install -r requirements.txt
+# AnyActive: URL Classifier Based on HTTP Codes
+
+A Python tool for checking the status codes of URLs or subdomains and categorizing them into different response groups.  
+
+## Features  
+- Check individual URLs or bulk subdomains from a file  
+- Categorizes responses into:  
+  - **2xx**: Successful responses  
+  - **3xx**: Redirection responses  
+  - **4xx**: Client error responses  
+  - **5xx**: Server error responses  
+- Displays detailed response headers in single URL mode  
+- Saves results in organized text files  
+- Custom output directory support  
+
+## Installation  
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/callmelokzy/anyactive
+   cd anyactive
+   ```  
+
+2. Install dependencies:  
+   ```bash
+   pip3 install -r requirements.txt
+   ```  
+
+## Usage  
+**Check a single URL:**  
+```bash
+python3 anyactive.py -u "<URL>" [-d "<output_directory>"]
 ```
 
-
-## <b> Usage </b>
-
-#### Help
+**Check multiple subdomains from a file:**  
+```bash
+python3 anyactive.py -l "<path_to_subdomains_file>" [-d "<output_directory>"]
 ```
-$ python3 anyactive.py -h/--help
-```
-#### For List of URLs:
-```
-$ python3 anyactive.py -l "path to the file containing urls/suddoamins" -d "path to save files"
-```
-- sample
-- ![image](https://user-images.githubusercontent.com/56486732/212759227-c6c132e7-c549-47fa-a757-304306b75bd0.png)
 
-#### For single URL: 
+**Example Commands:**  
+```bash
+python3 anyactive.py -u https://example.com
+python3 anyactive.py -l subdomains.txt -d results
 ```
-$ python3 anyactive.py -u "url to check"
-```
-- sample  </sub>
-- ![image](https://user-images.githubusercontent.com/56486732/212749669-9b78d2b3-4212-43b0-a590-901090184d55.png)
 
+## Output  
+- Results are saved in text files like:  
+  - `successful_2xx.txt`  
+  - `redirection_3xx.txt`  
+  - `clienterror_4xx.txt`  
+  - `servererror_5xx.txt`  
 
-#### Credits: 
+If no directory is specified, files are saved in the current working directory.  
 
-# Want to support my work?
+## Sample Output Screenshots  
+**Single URL Check:**  
+![image](https://user-images.githubusercontent.com/56486732/212749669-9b78d2b3-4212-43b0-a590-901090184d55.png)  
 
-<a href="https://www.buymeacoffee.com/callmelokzy"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a chaiii&emoji=☕&slug=callmelokzy&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+**Bulk URL Check:**  
+![image](https://user-images.githubusercontent.com/56486732/212759227-c6c132e7-c549-47fa-a757-304306b75bd0.png)  
+
+## Notes  
+- The tool includes a timeout of 5 seconds for each request to improve efficiency.  
+- Invalid or unreachable domains are skipped without halting the script.  
 
